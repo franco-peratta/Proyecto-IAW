@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>MyOwnSkateBoard</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<script type="text/javascript">
+		function limpiarPanel(){
+			//limpiar panel
+			var myNode = document.getElementById("panel_seleccion");
+			while (myNode.firstChild) {
+				myNode.removeChild(myNode.firstChild);
+			}
+		}
+		
+		function reset(){
+			
+			limpiarPanel();
+			background();
+			
+			//Recupero la imagen del prototipo
+			var container = document.getElementById("prototype");
+
+			//Creo imagen
+			var img = document.createElement("div");
+			img.style.position = "relative;"
+			img.setAttribute("style", "background-image: url(images/cruiser2.jpg); height: 252px; width: 910px");
+			
+			while (container.firstChild) {
+				container.removeChild(container.firstChild);
+			}
+			container.appendChild(img);
+		}
+		
+		function background() {
+			
+			limpiarPanel();
+			
+			//crear tags	
+			var newElement = document.createElement('div');
+			newElement.setAttribute("id","div1");
+			newElement.setAttribute("style","height:250px;width:auto;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;");
+			
+			//agregar div1 al panel
+			var p = document.getElementById('panel_seleccion');
+			p.appendChild(newElement);
+			
+			//creo y cargo las imagenes en el panel
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño1.png");
+			img.setAttribute("alt","diseño");	
+			img.setAttribute("onclick","selected(1)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");					
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			
+			p.firstChild.appendChild(img);
+
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño2.png");
+			img.setAttribute("alt","diseño");	
+			img.setAttribute("onclick","selected(2)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);
+
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño3.png");
+			img.setAttribute("alt","diseño");
+			img.setAttribute("onclick","selected(3)");	
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");	
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");			
+			p.firstChild.appendChild(img);		
+
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño4.png");
+			img.setAttribute("alt","diseño");
+			img.setAttribute("onclick","selected(4)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);		
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño5.png");
+			img.setAttribute("alt","diseño");	
+			img.setAttribute("onclick","selected(5)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);		
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño6.png");
+			img.setAttribute("alt","diseño");	
+			img.setAttribute("onclick","selected(6)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);		
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño7.png");
+			img.setAttribute("alt","diseño");
+			img.setAttribute("onclick","selected(7)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño8.png");
+			img.setAttribute("alt","diseño");	
+			img.setAttribute("onclick","selected(8)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);		
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño9.png");
+			img.setAttribute("alt","diseño");
+			img.setAttribute("onclick","selected(9)");		
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño10.png");
+			img.setAttribute("alt","diseño");
+			img.setAttribute("onclick","selected(10)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);		
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño11.png");
+			img.setAttribute("alt","diseño");
+			img.setAttribute("onclick","selected(11)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño12.png");
+			img.setAttribute("alt","diseño");	
+			img.setAttribute("onclick","selected(12)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);		
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño13.png");
+			img.setAttribute("alt","diseño");	
+			img.setAttribute("onclick","selected(13)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);	
+
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño14.png");
+			img.setAttribute("alt","diseño");	
+			img.setAttribute("onclick","selected(14)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);	
+			
+			var img = document.createElement("img");
+			img.setAttribute("src","images/diseño15.png");
+			img.setAttribute("alt","diseño");	
+			img.setAttribute("onclick","selected(15)");
+			img.setAttribute("onmouseover", "");
+			img.setAttribute("style", "cursor: pointer");
+			img.setAttribute("height","168");
+			img.setAttribute("width","46");
+			p.firstChild.appendChild(img);	
+		}
+		
+		function addImage(){
+			limpiarPanel();
+		}
+		
+		function addText(){
+			limpiarPanel();
+			
+			var content = document.getElementById("panel_seleccion");
+			
+			var txt = document.createElement("textarea");
+			txt.setAttribute("id","text");
+			txt.setAttribute("style","resize:none");
+			txt.setAttribute("rows","2");
+			txt.setAttribute("cols","50");
+			txt.setAttribute("maxlength","25");
+			txt.setAttribute("placeholder","Enter your text here");
+		
+			content.appendChild(txt);
+			
+			var btn = document.createElement("button");
+			btn.setAttribute("onclick", "ingresar_texto()");
+			btn.setAttribute("id","btn1");	
+			btn.innerHTML = "Ingresar";
+			content.appendChild(btn);	
+			
+			var form = document.createElement("form");
+			
+			//Creo el dropdown
+			var dropdown = document.createElement("select");
+			dropdown.setAttribute("id","color");
+			
+			var options = ["aqua","aquamarine","beige","black","blue","blueviolet","brown","chocolate","coral","crimson","darkblue","darkcyan","darkgoldenrod","darkgreen","darkorange","darkred","darkviolet","deeppink","fuchsia","gold","gray","green","mediumblue","midnightblue","orange","pink","purple","violet","white","yellow"]; 
+			
+			//Lleno el dropdown	
+			for(var i = 0; i < options.length; i++) {
+				var opt = options[i];
+				var el = document.createElement("option");
+				el.textContent = opt;
+				el.value = opt;
+				dropdown.appendChild(el);
+			}				
+			form.appendChild(dropdown);
+			content.appendChild(form);
+		}	
+		
+		window.onload = function(){
+			reset();
+			background();
+		}		
+		
+		function selected(index){
+			var str = "images/d"+index+".jpg";
+			
+			//Recupero la imagen del prototipo
+			var container = document.getElementById("prototype");
+
+			//Creo imagen
+			var img = document.createElement("div");
+			img.setAttribute("style", "background-image: url("+str+"); height: 252px; width: 910px; text-align: center;");
+			
+			while (container.firstChild) {
+				container.removeChild(container.firstChild);
+			}
+			container.appendChild(img);
+		}
+		
+		function ingresar_texto(){
+			var img = document.getElementById("prototype").firstChild;
+			
+			var txt = document.getElementById("text").value;
+			
+			var span = document.createElement("span");
+			span.setAttribute("id","span1");
+			span.setAttribute("draggable","true");
+			span.innerHTML = txt;	
+			
+			if(!(img.firstChild == null)){
+				img.removeChild(img.firstChild);
+			}	
+
+			let canvas = new Canvas('wtd_background_image');
+			let canvasObj = new fabric.Canvas('wtd_background_image');
+
+			function Canvas(id) {
+				this.canvas = document.createElement('canvas');
+				this.canvas.id = id;
+				img.appendChild(this.canvas);
+				return this.canvas;
+			}
+			canvasObj.setHeight(235);
+			canvasObj.setWidth(904);
+			
+			var texto = document.getElementById("text").value;
+			var color = document.getElementById("color").value;
+			
+			canvasObj.add(new fabric.Text(texto, { 
+			  fontFamily: 'Delicious_500', 
+			  left: 100, 
+			  top: 100,
+			  fill: color
+			}));			
+		}
+		
+		function toggleMode() {
+			//body
+			var body = document.getElementById("body");
+			var currentClass = body.className;
+			body.className = currentClass == "alt-mode" ? "normal-mode" : "alt-mode";
+			
+			//panel-header
+			var header = document.getElementById("panel_header");
+			var currentClass = header.className;
+			header.className = currentClass == "alt-mode" ? "normal-mode" : "alt-mode";
+			
+			//panel-body
+			var pbody = document.getElementById("panel_body");
+			var currentClass = pbody.className;
+			pbody.className = currentClass == "alt-mode" ? "normal-mode" : "alt-mode";			
+		}
+		
+		function about() {
+			alert("Proyecto IAW - 2017");		
+		}
+	</script>
+    
+</head>
+
+<body id="body" class="normal-mode">
+
+<div>
+	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand">MyOwnskateboard</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="home.html">Home</a></li>
+					<li class="active"><a onclick=about()>About</a></li>			
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="active" contenteditable="false"><a onclick=toggleMode()>Change mode</a></li>	
+				</ul>
+			</div>
+		</div>
+	</nav>
+</div>
+	
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">		
+		<div class="panel panel-primary">
+  		<div class="panel-heading normal-mode" id="panel_header">Styles</div>
+  		<div class="panel-body normal-mode" id="panel_body">
+			<div class="row">
+				<div class="col-md-12" id="prototype"> 
+				</div>
+			</div>					
+		</div>
+		</div>
+	</div>
+	<div class="col-md-2">					
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="col-md-2">
+	
+	</div>
+	<div class="col-md-8">
+
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-3">					
+						<div class="list-group">
+							<button type="button" class="list-group-item" onclick="background()">Background</button>
+							<button type="button" class="list-group-item" onclick="addImage()">Add Image</button>
+							<button type="button" class="list-group-item" onclick="addText()">Add Text</button>
+						</div>
+					</div>
+					<div class="col-md-7" id="panel_seleccion">
+						
+					</div>
+					<div class="col-md-2">
+						<button type="button" onclick="reset()">Reset to default</button>
+					</div>
+				</div>					
+			</div>
+		</div>
+
+	<div class="col-md-2">					
+
+	</div>
+</div>
+	
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/fabric.js"></script>
+	
+</body>
+</html>
