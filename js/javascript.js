@@ -185,7 +185,9 @@ function ingresar_texto(){
 		left: 100, 
 		top: 100,
 		fill: color
-	}));			
+	}));
+
+	//canvasObj.reload();
 }
 
 function limpiarPanel(){
