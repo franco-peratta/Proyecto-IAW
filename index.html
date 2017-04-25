@@ -9,7 +9,7 @@
 
 <!-- Bootstrap -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="css/style2.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,56 +17,14 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
-		<script type="text/javascript">
-		function validar() {
-			var texto = document.getElementById('textbox').value;
-			var estilo = document.getElementById('selectNumber').value;
-			if(!(texto === '') && estilo >= 1){				
-				var str = "estilo"+estilo+".html";
-				document.location.href = str;
-			}
-			else {
-				if(texto === ''){
-					alert("Project's name is empty.");
-				}
-				else{
-					alert("Choose a style please.");
-				}
-			}
-		}
-		
-		function toggleMode() {
-			//body
-			var body = document.getElementById("body");
-			var currentClass = body.className;
-			body.className = currentClass == "alt-mode" ? "normal-mode" : "alt-mode";
-			
-			//panel-header
-			var header = document.getElementById("panel_header");
-			var currentClass = header.className;
-			header.className = currentClass == "alt-mode" ? "normal-mode" : "alt-mode";
-			
-			//panel-body
-			var pbody = document.getElementById("panel_body");
-			var currentClass = pbody.className;
-			pbody.className = currentClass == "alt-mode" ? "normal-mode" : "alt-mode";			
-		}
-		
-		function about() {
-			alert("Proyecto IAW - 2017");		
-		}
-	</script>
-	
-	
-</head>
+</head>   
 
 <body id="body" class="normal-mode">
 
 <div>
 	<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
+		<div class="container">	
+			<div class="navbar-header">				
 				<a class="navbar-brand">MyOwnskateboard</a>
 			</div>
 			<div class="collapse navbar-collapse">
@@ -86,12 +44,12 @@
 	<div class="col-md-3"></div>
 	<div class="col-md-6">		
 		<div class="panel panel-primary">
-  		<div class="panel-heading normal-mode" id="panel_header">Styles</div>
-  		<div class="panel-body normal-mode" id="panel_body">
+  		<div class="panel-heading normal" id="panel_header">Styles</div>
+  		<div class="panel-body" id="panel_body">
 			<div class="row">
 			<div class="col-md-4"> <img class="imagen" src="images/popsicle.jpg" alt="style 1" style="width:70px;height:260px;"></div>
 			<div class="col-md-4"> <img class="imagen" src="images/cruiser.jpg" alt="style 2" style="width:70px;height:260px;"></div>
-			<div class="col-md-4"><img class="imagen" src="images/longboard.jpg" alt="style 3" style="width:70px;height:260px;"></div>
+			<div class="col-md-4"><img class="imagen" src="images/oldschool.jpg" alt="style 3" style="width:70px;height:260px;"></div>
 			</div>					
 		</div>
 		  </div>
@@ -129,9 +87,26 @@
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="js/bootstrap.min.js"></script>
-	
-	<script src="js/fill_dropdown.js" type="text/javascript"></script>
+	<script src="js/bootstrap.min.js"></script>	    
+	<script type="text/javascript" src="js/javascript.js"></script>	
+	<script type="text/javascript">
+		window.onload = function(){				
+			var modo = JSON.parse(localStorage.getItem("data"));
+			
+			if(modo == null){//si es la primera vez que se entra a la pag
+				var json_data = {modo: "normal", style: "none"};				
+				localStorage.setItem("data",JSON.stringify(json_data));
+			}
+			else{
+				var data = JSON.parse(localStorage.getItem("data"));
+				if(data.modo.localeCompare("alt")){
+					toggleMode();
+				}
+			}
+
+			filldropdown();	
+		}		
+	</script>	
 	
 </body>
 </html>

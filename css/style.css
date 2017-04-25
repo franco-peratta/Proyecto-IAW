@@ -6,12 +6,30 @@ body, html{
 	min-height: 100%;
 }
 
-body {
+body.normal-mode {
 	background-image: url("../images/img5.jpg");
-    background-color: lightblue;
 	padding-top: 80px; 
 	background-size: cover;
 	background-repeat: no-repeat;
+}
+
+body.alt-mode {
+	background-image: url("../images/img3.jpg");
+	padding-top: 80px; 
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#panel_header.normal {
+  color: white;
+  background-color: #000950;
+  border-color: white;
+}
+
+#panel_header.alt-mode {
+  color: white;
+  background-color: black;
+  border-color: black;
 }
 
 div {
@@ -55,23 +73,50 @@ div {
 .navbar-custom .navbar-toggle {
   	background-color:#eeeeee;
 }
-.navbar-custom .icon-bar {
-  	background-color:#33aa33;
-}
+/*
+.navbar-custom .icon-bar, .normal-mode {
+  	background-color:#000000; //33aa33
+}*/
 
 #panel_seleccion{
 	position: relative;	
 }
 
-#span1 {
-	position:absolute;
-	//font-size: 50px;
-	//color: red;
-	//left: 100px; //100 a 
-	//top:0px; //-20 a 140
+#selectNumber {
+	color: black;
 }
 
 canvas {
-	padding-top: 30px;
+	padding-top: 20px;
 	padding-left:20px;
+}
+
+#textbox {
+	padding-top: 8px;
+}
+
+#btn1 {
+	position: absolute;
+	bottom: 38px;
+	right: 80px;
+}
+
+#done {
+	position: absolute;
+	top: 70px;
+	right: 60px;
+}
+
+@font-face {
+	font-family: 'Billabong';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Billabong'), url('../fonts/Billabong.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Carolyna Pro Black';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Carolyna Pro Black'), url('../fonts/Carolyna Pro Black.woff') format('woff');
 }
