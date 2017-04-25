@@ -115,7 +115,7 @@ function addText(){
 			var btn = document.createElement("button");
 			btn.setAttribute("onclick", "ingresar_texto()");
 			btn.setAttribute("id","btn1");	
-			btn.innerHTML = "Ingresar";
+			btn.innerHTML = "Add";
 			content.appendChild(btn);	
 			
 			var form = document.createElement("form");
@@ -124,6 +124,7 @@ function addText(){
 			var dropdown = document.createElement("select");
 			dropdown.setAttribute("id","color");
 			
+			//VER CORRECCION -> LLENAR LOS COLORES DESDE UN ARCHIVO...
 			var options = ["aqua","aquamarine","beige","black","blue","blueviolet","brown","chocolate","coral","crimson","darkblue","darkcyan","darkgoldenrod","darkgreen","darkorange","darkred","darkviolet","deeppink","fuchsia","gold","gray","green","mediumblue","midnightblue","orange","pink","purple","violet","white","yellow"]; 
 			
 			//Lleno el dropdown	
@@ -174,6 +175,7 @@ function ingresar_texto(){
 		img.appendChild(this.canvas);
 		return this.canvas;
 	}
+	// VER CORRECCION -> ajustar el canvas a la imagen seleccionada.
 	canvasObj.setHeight(235);
 	canvasObj.setWidth(904);
 	
@@ -186,8 +188,6 @@ function ingresar_texto(){
 		top: 100,
 		fill: color
 	}));
-
-	//canvasObj.reload();
 }
 
 function limpiarPanel(){
